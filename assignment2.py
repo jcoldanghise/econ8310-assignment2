@@ -19,8 +19,10 @@ test_df['Total'] = scaler.fit_transform(test_df[['Total']]) # Standardize total 
 Y = train_df['meal']
 X = train_df.drop(drop_columns, axis=1) 
 
+
 model = XGBClassifier(n_estimators=100, max_depth=10, objective='binary:logistic') # Declare xgb classication model
 modelFit = model.fit(X, Y) # Fit the model 
+
 
 pred = modelFit.predict(test_df.drop(drop_columns, axis=1)) # Generate prediction
 
