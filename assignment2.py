@@ -29,5 +29,5 @@ X = train_df.drop(drop_columns, axis=1)
 model = RandomForestClassifier(n_estimators=100, n_jobs = -1) # Generate the random forest model
 modelFit = model.fit(X, Y) # Fit the model 
 
-pred = modelFit.predict(test_df.drop(drop_columns, axis=1)) # Generate prediction
+pred = list(modelFit.predict(test_df.drop(drop_columns, axis=1))) # Generate prediction
 
